@@ -7,7 +7,7 @@ from content.buttons import MainButtons
 
 
 def inline_keyboard_builder(
-    buttons: Enum = None, exclude: Enum = None, only: Enum = None
+    buttons: Enum | None, exclude: Enum | None, only: Enum | None
 ) -> InlineKeyboardMarkup:
     """
     InlineKeyboard designer.

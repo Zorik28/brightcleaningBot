@@ -107,3 +107,8 @@ class MeasurementDescription(str, Enum):
         "расстояния от колонны или выреза до ближайших стен.\n\n"
         "Укажи на схеме диагонали↗ - чем их больше, тем лучше."
     )
+
+
+CHECK_LIST = (
+    "BQACAgIAAxkBAAMPZpAePUvMSx8_4o7swn6gYKhNQbkAAktWAAI_7oFIrGBR5IdljIU1BA"
+)
