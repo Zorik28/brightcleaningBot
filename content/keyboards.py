@@ -1,13 +1,13 @@
-from enum import Enum
-
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
-from content.buttons import MainButtons
+from content.buttons import ButtonsEnum, MainMenuButtons
 
 
 def inline_keyboard_builder(
-    buttons: Enum | None, exclude: Enum | None, only: Enum | None
+    buttons: ButtonsEnum | None = None,
+    exclude: ButtonsEnum | None = None,
+    only: ButtonsEnum | None = None
 ) -> InlineKeyboardMarkup:
     """
     InlineKeyboard designer.
@@ -29,4 +29,4 @@ def inline_keyboard_builder(
     return builder.as_markup()
 
 
-start_keyboard = inline_keyboard_builder(MainButtons)
+start_keyboard = inline_keyboard_builder(MainMenuButtons)

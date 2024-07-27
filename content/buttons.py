@@ -1,7 +1,12 @@
 from enum import Enum
 
 
-class MainButtons(Enum):
+class ButtonsEnum(Enum):
+    """Main class for"""
+    pass
+
+
+class MainMenuButtons(ButtonsEnum):
     """Unified enum for main menu button text and callback data."""
 
     ADMIN = ("👮‍♀️ADMINISTRATION", 'admin')
