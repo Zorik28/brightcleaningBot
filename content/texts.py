@@ -32,3 +32,9 @@ class InstructionAnswers(str, Enum):
     VIDEO_INSTRUCTION_MOV = (
         "BAACAgIAAxkBAAM2ZqVay9meWDlkZg667iN1_eGaey8AApNHAAIsQjBJszXiJpoJt8s1BA" # noqa
     )
+
+
+class EmployeeAnswers(str, Enum):
+    """Answers for the employee section."""
+
+    TEXT = "{}, привет! Выбери один из пунктов меню!"

@@ -1,7 +1,9 @@
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
-from content.buttons import ButtonsEnum, MainMenuButtons
+from content.buttons import (
+    ButtonsEnum, EmployeeButtons, InstructionsButtons, MainMenuButtons
+)
 
 
 def inline_keyboard_builder(
@@ -25,8 +27,10 @@ def inline_keyboard_builder(
         if button != exclude:
             text, data = button.value
             builder.add(InlineKeyboardButton(text=text, callback_data=data))
-    builder.adjust(1)
+    builder.adjust(2)
     return builder.as_markup()
 
 
 start_keyboard = inline_keyboard_builder(MainMenuButtons)
+instructions_keyboard = inline_keyboard_builder(InstructionsButtons)
+employee_keyboard = inline_keyboard_builder(EmployeeButtons)
