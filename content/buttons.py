@@ -3,7 +3,6 @@ from enum import Enum
 
 class ButtonsEnum(Enum):
     """Parent class for all enum buttons."""
-    pass
 
 
 class MainMenuButtons(ButtonsEnum):
@@ -25,9 +24,22 @@ class EmployeeButtons(ButtonsEnum):
     TO_MAIN_MENU = ("⬅️to Main Menu", 'return')
 
 
+class SupportButtons(ButtonsEnum):
+    """Unified enum for support button text and url."""
+
+    TANYA = ("Татьяна👧🏻", 'https://t.me/+380982522681')
+    RAMELA = ("Рамела👩🏻", 'https://t.me/ramelaruti')
+    EKATERINA = ("Екатерина👩🏼", 'https://t.me/KathrynK0')
+    INSTAGRAM = ("Instagram📷", 'instagram.com/brightcleaningnyc')
+    WEB_SITE = ("Our Web Site🌐", 'brightcleaningnyc.com')
+
+
 class InstructionsButtons(ButtonsEnum):
     """Unified enum for instructions button text and callback data."""
 
     FILE = ("Cleaning Check List", 'file')
     VIDEO = ("Video Instruction", 'video')
     TO_MAIN_MENU = ("⬅️to Main Menu", 'return')
+
+
+TO_MAIN_MENU = ("⬅️to Main Menu", 'return')

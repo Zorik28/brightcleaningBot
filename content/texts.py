@@ -9,6 +9,8 @@ GREETING = (
     "работа."
 )
 
+SUPPORT = "По контактам ниже вы сможете с нами связаться."
+
 
 class InstructionAnswers(str, Enum):
     """Answers for the instruction section."""
@@ -37,4 +39,4 @@ class InstructionAnswers(str, Enum):
 class EmployeeAnswers(str, Enum):
     """Answers for the employee section."""
 
-    TEXT = "{}, привет! Выбери один из пунктов меню!"
+    TEXT = "{}, привет!\nВыбери один из пунктов:"

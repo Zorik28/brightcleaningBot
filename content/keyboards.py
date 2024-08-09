@@ -2,35 +2,35 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 from content.buttons import (
-    ButtonsEnum, EmployeeButtons, InstructionsButtons, MainMenuButtons
+    ButtonsEnum, EmployeeButtons, InstructionsButtons, MainMenuButtons,
+    SupportButtons, TO_MAIN_MENU
 )
 
 
-def inline_keyboard_builder(
-    buttons: ButtonsEnum | None = None,
-    exclude: ButtonsEnum | None = None,
-    only: ButtonsEnum | None = None
-) -> InlineKeyboardMarkup:
-    """
-    InlineKeyboard designer.
-
-    If `exclude_button` is passed, the button is removed.
-
-    If `only` is passed, the keyboard will only contain one button.
-    """
+def inline_keyboard_builder(buttons: ButtonsEnum) -> InlineKeyboardMarkup:
+    """InlineKeyboard designer."""
     builder = InlineKeyboardBuilder()
-    if only:
-        text, data = only.value
-        builder.add(InlineKeyboardButton(text=text, callback_data=data))
-        return builder.as_markup()
     for button in buttons:
-        if button != exclude:
-            text, data = button.value
-            builder.add(InlineKeyboardButton(text=text, callback_data=data))
+        text, data = button.value
+        builder.add(InlineKeyboardButton(text=text, callback_data=data))
     builder.adjust(2)
     return builder.as_markup()
 
 
+def url_keyboard_builder(buttons: ButtonsEnum) -> InlineKeyboardMarkup:
+    """InlineKeyboard designer for url buttons."""
+    builder = InlineKeyboardBuilder()
+    for button in buttons:
+        text, data = button.value
+        builder.add(InlineKeyboardButton(text=text, url=data))
+    builder.add(InlineKeyboardButton(
+        text=TO_MAIN_MENU[0], callback_data=TO_MAIN_MENU[1])
+    )
+    builder.adjust(3, 2, 1)
+    return builder.as_markup()
+
+
 start_keyboard = inline_keyboard_builder(MainMenuButtons)
-instructions_keyboard = inline_keyboard_builder(InstructionsButtons)
 employee_keyboard = inline_keyboard_builder(EmployeeButtons)
+instructions_keyboard = inline_keyboard_builder(InstructionsButtons)
+support_keyboard = url_keyboard_builder(SupportButtons)

@@ -3,8 +3,8 @@ from aiogram.types import CallbackQuery
 
 from configs import delete_or_continue
 from content.buttons import InstructionsButtons, MainMenuButtons
-from content.keyboards import instructions_keyboard, start_keyboard
-from content.texts import GREETING, InstructionAnswers
+from content.keyboards import instructions_keyboard
+from content.texts import InstructionAnswers
 
 
 router = Router()
@@ -18,14 +18,6 @@ async def instructions(callback: CallbackQuery):
         text=InstructionAnswers.TEXT,
         reply_markup=instructions_keyboard
     )
-    await callback.answer()
-
-
-@router.callback_query(F.data == InstructionsButtons.TO_MAIN_MENU.value[1])
-async def to_main_menu(callback: CallbackQuery):
-    """'to main menu' button handler."""
-    await delete_or_continue(callback)
-    await callback.message.answer(text=GREETING, reply_markup=start_keyboard)
     await callback.answer()
 
 
