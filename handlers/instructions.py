@@ -45,8 +45,14 @@ async def video(callback: CallbackQuery):
 async def airbnb(callback: CallbackQuery):
     """Airbnb button handler."""
     # Создает список InputMediaPhoto на основе переданных file_id
-    media_1 = [InputMediaPhoto(media=file_id) for file_id in InstructionAnswers.AIRBNB_PHOTOS_1.value]
-    media_2 = [InputMediaPhoto(media=file_id) for file_id in InstructionAnswers.AIRBNB_PHOTOS_2.value]
+    media_1 = [
+        InputMediaPhoto(media=file_id)
+        for file_id in InstructionAnswers.AIRBNB_PHOTOS_1.value
+    ]
+    media_2 = [
+        InputMediaPhoto(media=file_id)
+        for file_id in InstructionAnswers.AIRBNB_PHOTOS_2.value
+    ]
     await callback.message.answer_media_group(media=media_1)
     await callback.message.answer_media_group(media=media_2)
     await callback.answer()

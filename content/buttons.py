@@ -21,7 +21,7 @@ class EmployeeButtons(ButtonsEnum):
     WEEKLY_SCHEDULE = ("Weekly Schedule 📅", 'schedule')
     UPLOAD_EXPENSES = ("Upload Expenses 🫰", 'expenses')
     SEE_MY_PROGRESS = ("See my progress 📊", 'progress')
-    TO_MAIN_MENU = ("⬅️to Main Menu", 'return')
+    TO_MAIN_MENU = ("⬅️ to Main Menu", 'return')
 
 
 class SupportButtons(ButtonsEnum):
@@ -37,10 +37,10 @@ class SupportButtons(ButtonsEnum):
 class InstructionsButtons(ButtonsEnum):
     """Unified enum for instructions button text and callback data."""
 
-    AIRBNB = ("Airbnb", 'airbnb')
     FILE = ("Cleaning Check List", 'file')
     VIDEO = ("Video Instruction", 'video')
-    TO_MAIN_MENU = ("⬅️to Main Menu", 'return')
+    AIRBNB = ("Airbnb", 'airbnb')
+    TO_MAIN_MENU = ("⬅️ to Main Menu", 'return')
 
 
-TO_MAIN_MENU = ("⬅️to Main Menu", 'return')
+TO_MAIN_MENU = ("⬅️ to Main Menu", 'return')
