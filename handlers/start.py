@@ -25,9 +25,9 @@ async def to_main_menu(callback: CallbackQuery):
     await callback.answer()
 
 
-# # Обработчик всех типов сообщений
-# @router.message()
-# async def handle_docs(message: Message):
-#     document = message.video
-#     file_id = document.file_id
-#     await message.reply(f"File ID: {file_id}")
+# @router.message(F.photo)
+# async def get_file_id(message: Message):
+#     # Получаем file_id самой большой фотографии (лучшего качества)
+#     file_id = message.photo[-1].file_id
+#     spisok.append(file_id)
+#     await message.answer(f"file_id: {spisok}")

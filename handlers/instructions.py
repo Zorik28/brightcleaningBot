@@ -1,5 +1,5 @@
 from aiogram import F, Router
-from aiogram.types import CallbackQuery
+from aiogram.types import CallbackQuery, InputMediaPhoto
 
 from configs import delete_or_continue
 from content.buttons import InstructionsButtons, MainMenuButtons
@@ -38,4 +38,15 @@ async def video(callback: CallbackQuery):
         video=InstructionAnswers.VIDEO_INSTRUCTION_MOV,
         caption="Видео инструкция к вашим услугам!"
     )
+    await callback.answer()
+
+
+@router.callback_query(F.data == InstructionsButtons.AIRBNB.value[1])
+async def airbnb(callback: CallbackQuery):
+    """Airbnb button handler."""
+    # Создает список InputMediaPhoto на основе переданных file_id
+    media_1 = [InputMediaPhoto(media=file_id) for file_id in InstructionAnswers.AIRBNB_PHOTOS_1.value]
+    media_2 = [InputMediaPhoto(media=file_id) for file_id in InstructionAnswers.AIRBNB_PHOTOS_2.value]
+    await callback.message.answer_media_group(media=media_1)
+    await callback.message.answer_media_group(media=media_2)
     await callback.answer()

@@ -37,6 +37,7 @@ class SupportButtons(ButtonsEnum):
 class InstructionsButtons(ButtonsEnum):
     """Unified enum for instructions button text and callback data."""
 
+    AIRBNB = ("Airbnb", 'airbnb')
     FILE = ("Cleaning Check List", 'file')
     VIDEO = ("Video Instruction", 'video')
     TO_MAIN_MENU = ("⬅️to Main Menu", 'return')
