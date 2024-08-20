@@ -1,2 +1,2 @@
 # brightcleaningBot
-Telegram Bot for Ramela Aruti
+Telegram Bot for Ramela Aruti and Co
